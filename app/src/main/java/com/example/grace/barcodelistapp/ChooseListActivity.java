@@ -2,6 +2,7 @@
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_list);
+        setContentView(R.layout.activity_choose  _list);
 
 
         listName.add("nyobak satu");
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 //        listView.setAdapter(adapter);
 
         RecyclerView listViewer = (RecyclerView) findViewById(R.id.listViewer);
-
+        listViewer.setLayoutManager(new LinearLayoutManager(this));
         listViewer.setAdapter(new RecyclerViewAdapter(listName));
 
 
