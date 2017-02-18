@@ -21,7 +21,8 @@ import java.util.ArrayList;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_list);
 
-
+        //why can't i put this outside the oncreate? oh well
+        //have to figure out some way so the arrays wont be repeated somehow after adding new list
         listName.add("nyobak satu");
         listName.add("yaolo");
 
@@ -37,7 +38,7 @@ import java.util.ArrayList;
         newListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextScreenIntent = new Intent(v, NewListActivity.class);
+                Intent nextScreenIntent = new Intent(v.getContext(), NewListActivity.class);
                 startActivity(nextScreenIntent);
             }
         });
