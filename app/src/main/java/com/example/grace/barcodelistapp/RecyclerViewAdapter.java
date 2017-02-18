@@ -50,7 +50,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return ChooseListActivity.listName.size();
+        return arrayViewed.size();
     }
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
