@@ -11,8 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Timer;
 
  public class ChooseListActivity extends AppCompatActivity {
      public static ArrayList<String> listName = new ArrayList<>();
@@ -42,6 +44,16 @@ import java.util.ArrayList;
                 startActivity(nextScreenIntent);
             }
         });
-
     }
-}
+
+     boolean exitPressed = false;
+     @Override
+     public void onBackPressed() {
+         if (exitPressed) {
+             super.onBackPressed();
+         } else {
+             Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
+             exitPressed = true;
+         }
+     }
+ }
